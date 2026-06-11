@@ -1,0 +1,201 @@
+FILE: MALARIA_EST_MORTALITY.csv
+Date audited: 09-O6-2026
+
+BASIC FACTS
+Rows: 2835
+Columns: A-Y
+One row represents: one country in one year for one indicator
+
+STRUCTURE
+Format: Long (years are rows)
+Key columns: IndicatorCode, SpatialDimensionValueCode, ParentLocationCode, TimeDim, NumericValue, Low, High
+Country code column: SpatialDimensionValueCode
+Example value: "NGA" — 3-letter ISO format
+Years covered: 2000 to 2024
+
+CONTENT
+IndicatorCode unique values: MALARIA_EST_MORTALITY (only one)
+ParentLocationCode values: AFR, AMR, EMR, EUR, SEAR, WPR
+Value column: numeric, looks like rates e.g. 52.3, 4.1, 0.0
+
+QUALITY FLAGS
+Missing NumericValue: none
+COUNTBLANK	0
+MAX	374.7920955
+MIN	0
+COUNTA(COMMENT)	0
+COUNTIF(0)	797
+
+
+
+FILE: MALARIA_EST_INCIDENCE.csv
+Date audited: 09-O6-2026
+
+BASIC FACTS
+Rows: 2856
+Columns: A-Y
+One row represents: one country in one year for one indicator
+
+STRUCTURE
+Format: Long (years are rows)
+Key columns: IndicatorCode, SpatialDimensionValueCode, ParentLocationCode, TimeDim, NumericValue, Low, High
+Country code column: SpatialDimensionValueCode
+Example value: "NGA" — 3-letter ISO format
+Years covered: 2000 to 2024
+
+CONTENT
+IndicatorCode unique values: MALARIA_EST_INCIDENCE (only one)
+ParentLocationCode values: AFR, AMR, EMR, EUR, SEAR, WPR
+Value column: numeric, looks like rates e.g. 52.3, 4.1, 0.0
+
+QUALITY FLAGS
+Missing NumericValue: none
+COUNTBLANK	0
+MAX	718.9803858
+MAX COUNTRY CODE	SLB
+MIN	0
+COUNTA(COMMENTS)	0
+COUNTIF(0)	349
+
+
+
+FILE: MALARIA_ITN_COVERAGE.csv
+Date audited: 09-O6-2026
+
+BASIC FACTS
+Rows: 401
+Columns: A-Y
+One row represents: one country in one year for one indicator
+
+STRUCTURE
+Format: Long (years are rows)
+Key columns: IndicatorCode, SpatialDimensionValueCode, ParentLocationCode, TimeDim, NumericValue
+Country code column: SpatialDimensionValueCode
+Example value: "NGA" — 3-letter ISO format
+Years covered: 2015 to 2024
+
+CONTENT
+IndicatorCode unique values: MALARIA_ITN_COVERAGE (only one)
+ParentLocationCode values: AFR, EMR
+Value column: numeric, looks like rates e.g. 52.3, 4.1, 0.0
+
+QUALITY FLAGS
+COUNTBLANKS	0
+MAX	95.50827
+MIN	5.1267048
+COUNTA(COMMENTS)	0
+COUNTIF(0)	0
+
+
+FILE: MALARIA_ACT_TREATED.csv
+Date audited: 09-O6-2026
+
+BASIC FACTS
+Rows: 506
+Columns: A-Y
+One row represents: one country in one year for one indicator
+
+STRUCTURE
+Format: Long (years are rows)
+Key columns: IndicatorCode, SpatialDimensionValueCode, ParentLocationCode, TimeDim, NumericValue
+Country code column: SpatialDimensionValueCode
+Example value: "NGA" — 3-letter ISO format
+Years covered: 2015 to 2024
+
+CONTENT
+IndicatorCode unique values: MALARIA_ACT_TREATED (only one)
+ParentLocationCode values: AFR, AMR, EMR, SEAR, WPR
+Value column: numeric, looks like count (whole numbers)
+
+QUALITY FLAGS
+COUNTBLANK	0
+MAX	30003155
+MIN	0
+COUNTA	0
+COUNTIF	17
+
+
+
+FILE: MALARIA_IRS_COVERAGE.csv
+Date audited: 09-O6-2026
+
+BASIC FACTS
+Rows: 580
+Columns: A-Y
+One row represents: one country in one year for one indicator
+
+STRUCTURE
+Format: Long (years are rows)
+Key columns: IndicatorCode, SpatialDimensionValueCode, ParentLocationCode, TimeDim, NumericValue
+Country code column: SpatialDimensionValueCode
+Example value: "NGA" — 3-letter ISO format
+Years covered: 2015 to 2024
+
+CONTENT
+IndicatorCode unique values: MALARIA_IRS_COVERAGE (only one)
+ParentLocationCode values: AFR, AMR, EMR, SEAR, WPR
+Value column: numeric, looks like count (whole numbers)
+QUALITY FLAGS
+Missing NumericValue: none
+Obviously wrong values: ParentLocationCode has few missing values
+COUNTBLANK(ParentLocationCode)	42
+Country affected: BRA, BDI, SEN, ZWE, SAU, KEN	
+
+COUNTBLANK	0
+MAX	127453762
+MIN	0
+COUNTA(COMMENTS)	0
+ COUNTIF	1
+
+
+
+FILE: API_NY.GDP.PCAP.CD_DS2.csv
+Date audited: 10-O6-2026
+
+BASIC FACTS
+Rows: 267
+Columns: A-BR
+One row represents: one country in one year for one indicator
+
+STRUCTURE
+Format: Wide (years are columns)
+Key columns: Country Code, (years)
+Country code column: SpatialDimensionValueCode
+Example value: "NGA" — 3-letter ISO format
+Years covered: 1960 to 2024
+
+CONTENT
+IndicatorCode unique values: GDP per capita (current US$)
+ (only one)
+Value column: numeric, looks like rate (decimals)
+QUALITY FLAGS
+Between 1960 and 2024
+COUNTBLANK	2729
+MAX	288001.4334
+MIN	11.80132167
+
+
+
+FILE: API_SP.URB.TOTL.IN.ZS_DS2.csv
+Date audited: 10-O6-2026
+
+BASIC FACTS
+Rows: 267
+Columns: A-BR
+One row represents: one country in one year for one indicator
+
+STRUCTURE
+Format: Wide (years are columns)
+Key columns: Country Code, (years)
+Country code column: SpatialDimensionValueCode
+Example value: "NGA" — 3-letter ISO format
+Years covered: 1960 to 2024
+
+CONTENT
+IndicatorCode unique values: Urban population (% of total population)
+(only one)
+Value column: numeric, looks like rate (decimals)
+QUALITY FLAGS
+COUNTBLANK	65
+MAX	100
+MIN	1.838566564
