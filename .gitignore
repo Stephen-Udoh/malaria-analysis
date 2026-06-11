@@ -219,3 +219,15 @@ __marimo__/
 
 # Environment variables — never commit credentials
 .env
+
+# Raw data files
+data/raw/
+
+# Cleaned data files
+data/cleaned/
+
+# Zip files
+*.zip
+
+# OS files
+Thumbs.db
