@@ -1,4 +1,4 @@
-FILE: MALARIA_EST_MORTALITY.csv
+FILE: MALARIA_EST_MORTALITY.csv | per 100,000 population
 Date audited: 09-O6-2026
 
 BASIC FACTS
@@ -26,9 +26,9 @@ MIN	0
 COUNTA(COMMENT)	0
 COUNTIF(0)	797
 
+-----------------------------------------------------------
 
-
-FILE: MALARIA_EST_INCIDENCE.csv
+FILE: MALARIA_EST_INCIDENCE.csv | per 1000 population at risk
 Date audited: 09-O6-2026
 
 BASIC FACTS
@@ -57,7 +57,7 @@ MIN	0
 COUNTA(COMMENTS)	0
 COUNTIF(0)	349
 
-
+-----------------------------------------------------------
 
 FILE: MALARIA_ITN_COVERAGE.csv
 Date audited: 09-O6-2026
@@ -86,7 +86,7 @@ MIN	5.1267048
 COUNTA(COMMENTS)	0
 COUNTIF(0)	0
 
-
+-----------------------------------------------------------
 FILE: MALARIA_ACT_TREATED.csv
 Date audited: 09-O6-2026
 
@@ -114,7 +114,7 @@ MIN	0
 COUNTA	0
 COUNTIF	17
 
-
+-----------------------------------------------------------
 
 FILE: MALARIA_IRS_COVERAGE.csv
 Date audited: 09-O6-2026
@@ -148,7 +148,7 @@ COUNTA(COMMENTS)	0
  COUNTIF	1
 
 
-
+-----------------------------------------------------------
 FILE: API_NY.GDP.PCAP.CD_DS2.csv
 Date audited: 10-O6-2026
 
@@ -174,7 +174,7 @@ COUNTBLANK	2729
 MAX	288001.4334
 MIN	11.80132167
 
-
+-----------------------------------------------------------
 
 FILE: API_SP.URB.TOTL.IN.ZS_DS2.csv
 Date audited: 10-O6-2026
@@ -199,3 +199,66 @@ QUALITY FLAGS
 COUNTBLANK	65
 MAX	100
 MIN	1.838566564
+----------------------------------------------
+Incidence scaling decision:
+Original unit: per 1,000 population at risk
+Decision: retain original scaling — no conversion
+Reason: incidence and mortality measure different 
+        phenomena and are always analysed separately
+        Conversion to per 100,000 not necessary
+        and creates misleadingly large numbers
+Column name: incidence_per_1000
+
+--------------------------------------------------
+Scale difference identified:
+MALARIA_EST_INCIDENCE  →  per 1,000 population at risk
+MALARIA_EST_MORTALITY  →  per 100,000 population
+Decision: convert incidence to per 100,000 
+          by multiplying NumericValue × 100
+          Applied during SQL transformation step
+--------------------------------------------------
+
+Post-filter row counts vs expected:
+Expected per table: ~450 rows (45 countries × 10 years)
+
+clean_itn  370 rows  →  82% coverage  acceptable
+clean_act  271 rows  →  60% coverage  notable gap
+clean_irs  243 rows  →  54% coverage  notable gap
+
+Implication: regression models using IRS and ACT 
+will have fewer complete cases than ITN models.
+Missing data not random — weaker health systems 
+less likely to report. Potential selection bias.
+
+---------------------------------------------
+
+Missing values in trend_data — post join investigation:
+
+mortality_per_100k  →  1 missing row
+                        negligible, no action needed
+
+gdp_per_capita      →  52 missing rows
+                        MYT: 22 years — exclude from regression
+                        SSD: 17 years — pre-independence, retain
+                        ERI: 13 years — data scarce, retain with flag
+
+urban_pct           →  22 missing rows
+                        MYT only — consistent with GDP gap
+
+Decision: Mayotte excluded from regression_data
+          Retained in trend_data for burden visualisation
+          South Sudan and Eritrea retained with limitations noted
+
+---------------------------------------------------------------
+
+ITN missing values — 71 rows across 7 countries
+All missing countries are low transmission 
+or near-elimination settings:
+BWA, CPV, DZA, NAM, STP, SWZ, ZAF — excluded
+MUS — 1 year missing, retained
+
+Epidemiological justification:
+WHO does not model ITN coverage for countries
+without active large-scale malaria transmission.
+Exclusion is scientifically appropriate and
+consistent with the research question scope.
