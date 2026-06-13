@@ -262,3 +262,21 @@ WHO does not model ITN coverage for countries
 without active large-scale malaria transmission.
 Exclusion is scientifically appropriate and
 consistent with the research question scope.
+----------------------------------------------------
+
+IRS and ACT missingness analysis:
+
+IRS — 48% missing
+Pattern: structural — many countries do not 
+use IRS as primary intervention
+Decision: convert to binary variable
+          irs_deployed = 1 if any IRS reported
+          irs_deployed = 0 if none reported
+          Raw count retained for reference only
+
+ACT — 37% missing  
+Pattern: scattered reporting gaps
+Decision: retain as count
+          Convert to rate after population join
+          Missing rows dropped in regression
+          Noted in limitations
