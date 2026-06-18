@@ -1,0 +1,12 @@
+Model,Variable,Python_B,SPSS_B,Python_SE,SPSS_SE,Coefficients_Match,Conclusions_Match
+Model 1,ITN Coverage,1.42,1.42,0.276,0.32,✓,✓
+Model 1,R²,0.053,0.053,-,-,✓,✓
+Model 2,ITN Coverage,1.064,1.064,0.322,0.335,✓,✓
+Model 2,IRS Deployed,-35.766,-35.766,12.686,12.178,✓,✓
+Model 2,Log GDP,-49.149,-49.149,13.312,12.01,✓,✓
+Model 3,ITN Coverage,0.184,0.184,0.085,0.087,✓,✓
+Model 3,IRS Deployed,-19.852,-19.852,3.735,3.185,✓,✓
+Model 3,Log GDP,-15.359,-15.359,2.919,3.141,✓,✓
+Model 4,ITN Coverage,0.766,0.766,0.325,0.317,✓,✓
+Model 4,East Africa,-108.864,-108.864,16.117,16.048,✓,✓
+Model 4,Central Africa,36.04,36.04,13.362,15.35,✓,✓
