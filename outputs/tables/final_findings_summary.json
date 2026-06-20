@@ -1,0 +1,20 @@
+{
+  "burden_decline_2000_2024": {
+    "incidence": "40% reduction (290 \u2192 175 per 1,000)",
+    "mortality": "65% reduction (115 \u2192 40 per 100,000)"
+  },
+  "strongest_predictors": {
+    "OLS": "Log GDP per capita",
+    "Random_Forest_incidence": "Urban population (%)",
+    "Random_Forest_mortality": "Urban population (%) / Log GDP"
+  },
+  "IRS_mortality_effect": "Confirmed by both OLS (\u03b2=-0.31) and Random Forest (17.5% importance) \u2014 strongest for mortality specifically",
+  "ITN_finding": "Positive association persists after adjustment \u2014 targeting bias, not causal evidence",
+  "forecast_2030": {
+    "continental_incidence": "172 \u2192 154 per 1,000 (-10.6%)",
+    "continental_mortality": "37 \u2192 29 per 100,000 (-22.3%)",
+    "West_Africa": "-18.9%",
+    "East_Africa": "-15.8%",
+    "Central_Africa": "0.0% \u2014 stagnant, highest priority"
+  }
+}
